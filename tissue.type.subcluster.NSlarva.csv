@@ -1,0 +1,15 @@
+cluster,cell.type.4,marker,KH.cell.type,comment
+7_0,Gabaergic interneurons,slc39a1 Irx,,
+7_1,Gabaergic interneurons,Lhx1 Gstm,,
+7_2,Eminens,Prop,,
+8_0,Hh2+ cells,slc23a1,,
+8_1_0,Hh2+ cells,slc23a2 Hh2,,
+8_1_1,pigment cells,tyr,,otolith
+12_0,lens cells,gbe1,,
+12_1,lens cells,gbe1,,
+12_2,Hh2+ cells,slc23a1,,
+13_0,Rx+ PRCs,Rx,,
+13_1_0,pigment cells,gbe1 tyr kh.c2.1036,,pigment cells? Ocellus?
+13_1_1,lens cells,gbe1,,
+41_0,Gabaergic interneurons,,,Gabaergic interneurons?
+41_1,VP RNs,VP NP,,
