@@ -794,3 +794,15 @@ ggsave("dotplot.top20.pigmentcells.cluster.pdf", device= "pdf", width = 40,
 
 save.image(object)
 
+##Number of cells in sensory vesicle
+
+head(Idents(NS.2))
+
+SVtypes <- c("coronet cells","FoxP RNs", "Gabaergic interneurons", "Hh2+ cells" ,
+             "lens cells",  "OACCs", "pigment cells",            "Rx+ PRCs",
+             "Six3/6 pro-ASV", "Stum+ PRCs", "Eminens",
+            "switch neurons" , "VP RNs"  ,  "VPR+ RNs"    )
+
+SV <- subset(NS.2, idents = SVtypes) 
+
+save.image(object)
