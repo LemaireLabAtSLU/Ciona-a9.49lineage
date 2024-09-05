@@ -743,6 +743,24 @@ DotPlot(NS.2, features = rev(top10gene), cols = c("lightgrey", "#330066"), clust
 ggsave("dotplot.top10.Hh2cells.cluster.pdf", device= "pdf", width = 40, 
        height = 20, units = "cm")
 
+##source data for dotplot
+p <- DotPlot(NS.2, features = rev(top10gene))
+Sourcedata1 <- p$data
+Sourcedata1 <- rownames_to_column(Sourcedata1)
+Sourcedata1 <- Sourcedata1[, -1]
+top10name <- c("Chr1,1766","Slc23a1", "Chr1.1767", "Chr11.893", "Chr14.147", "Aqp8", "Slc6a11", "Hh2", "Hmcn1", "Lrp6")
+top10name <- data.frame(top10gene, top10name)
+colnames(top10name)[1] <-"KY21_ID"
+colnames(Sourcedata1)[3] <- "KY21_ID"
+
+Sourcedata1 <- tidyft::left_join(Sourcedata1,top10name,
+                                by = "KY21_ID")
+
+write.table(Sourcedata1, file="SourceData_FigS1A.csv",
+            quote=F, sep=",", col.names=NA)
+
+save.image(object)
+
 DotPlot(NS.2, features = rev(top10gene), cols = c("lightgrey", "#330066"), cluster.idents = FALSE) +coord_flip()+
   scale_y_discrete(limits = cell.type.order)+
   theme_classic() +
