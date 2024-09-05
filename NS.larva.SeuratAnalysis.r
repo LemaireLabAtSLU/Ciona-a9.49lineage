@@ -806,3 +806,17 @@ SVtypes <- c("coronet cells","FoxP RNs", "Gabaergic interneurons", "Hh2+ cells" 
 SV <- subset(NS.2, idents = SVtypes) 
 
 save.image(object)
+
+## Get cell ID for each cell type.
+
+metadata <- NS.2@meta.data
+
+cellIDtypes <- subset(metadata, select ="cell.type.5")
+
+colnames(cellIDtypes)<-"cell.type"
+
+write.table(cellIDtypes, file="Table2_cellTypes-nervousSystem.csv",
+            quote=F, sep=",", col.names=NA)
+
+save.image(object)
+
