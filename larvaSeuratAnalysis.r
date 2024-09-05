@@ -867,3 +867,14 @@ DimPlot(epiNS, reduction = "tsne",
 md2 <- epiNS@meta.data
 
 save.image(object)
+
+### Get cell ID for each cluster and tissue type.
+
+metadata <- larva.combined@meta.data
+
+cellIDtypes <- metadata[,c("tissue", "seurat_clusters")]
+
+write.table(cellIDtypes, file="Table1_tissueTypes-wholeLarvae.csv",
+            quote=F, sep=",", col.names=NA)
+
+save.image(object)
