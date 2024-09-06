@@ -748,7 +748,7 @@ p <- DotPlot(NS.2, features = rev(top10gene))
 Sourcedata1 <- p$data
 Sourcedata1 <- rownames_to_column(Sourcedata1)
 Sourcedata1 <- Sourcedata1[, -1]
-top10name <- c("Chr1,1766","Slc23a1", "Chr1.1767", "Chr11.893", "Chr14.147", "Aqp8", "Slc6a11", "Hh2", "Hmcn1", "Lrp6")
+top10name <- c("Chr1.1766","Slc23a1", "Chr1.1767", "Chr11.893", "Chr14.147", "Aqp8", "Slc6a11", "Hh2", "Hmcn1", "Lrp6")
 top10name <- data.frame(top10gene, top10name)
 colnames(top10name)[1] <-"KY21_ID"
 colnames(Sourcedata1)[3] <- "KY21_ID"
